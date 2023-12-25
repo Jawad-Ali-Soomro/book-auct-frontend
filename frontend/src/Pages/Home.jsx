@@ -6,22 +6,25 @@ import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import axios from 'axios'
 const Home = () => {
   const navigate = useNavigate();
   const [data , setData] = useState([])
+  const [Bids , setBids] = useState([])
   useEffect(() => {
     const getData = async() => {
       axios.get('http://localhost:4000/api/v1/get/all/books')
       .then((res) => setData(res.data.Books))
     }
+    const getBids = async(req,res) => {
+      await axios.get('http://localhost:4000/api/v1/get/bids')
+      .then((res) => setBids(res.data.Bids)).catch((err) => console.log(err))
+    }
     return () => {
       getData()
-      console.log(data);
+      getBids()
     }
   }, [])
-  
   return (
     <div className="home-page">
       <Header />
@@ -89,24 +92,41 @@ const Home = () => {
               onClick={() => navigate(`/book/${item._id}`)}
             >
               <img src={item.coverImage} alt="" />
-              <h2 style={{marginTop:'10px'}}>{item.bookName}</h2>
+              <h2>{item.bookName}</h2>
               <div className="bid flex">
                 <div className="flex col">
                   <span className="flex">
                     <i className="uil uil-arrow-up"></i>
                     <p>Highest Bid</p>
                   </span>
-                  <h2>{"$ " + item.highest}</h2>
+                  <h2>{Bids.map((bid) => {
+                    if(bid.bidId === item._id){
+                      return <p>{bid.highestBid} $</p>
+                    }
+                  })}</h2>
                 </div>
                 <div className="flex col">
                   <span className="flex">
                     <i className="uil uil-arrow-down"></i>
                     <p>Lowest Bid</p>
                   </span>
-                  <h2>{"$ " + item.Lowest}</h2>
+                  <h2>{Bids.map((bid) => {
+                    if(bid.bidId === item._id){
+                      return <p>{bid.lowestBid} $</p>
+                    }
+                  })}</h2>
                 </div>
               </div>
-              <p className="bid-status">Bid Status {item.bidStatus == "Open" ? <span style={{color:"rgb(13, 235, 124)"}}>OPEN</span> : <span style={{color:"red"}}>CLOSED</span>}</p>
+              <p className="bid-status">Bid Status {Bids.map((bid) => {
+                if(bid.bidId === item._id){
+                  if(bid.bidStatus == true){
+                    return <span style={{color:'green'}}>OPEN</span>
+                  }
+                  else{
+                    return <span style={{color:'red'}}>CLOSED</span>
+                  }
+                }
+              })}</p>
               <button>Start Bid</button>
             </div>
           );
