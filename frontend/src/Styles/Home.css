@@ -258,3 +258,68 @@
   font-size: 1.2rem;
   text-transform: uppercase;
 }
+
+.main-book-page .img-sect {
+  width: 50%;
+  height: 100vh;
+}
+
+.main-book-page img {
+  width: 250px;
+  height: 330px;
+  border-radius: 20px;
+}
+.main-book-page .main-book-content {
+  width: 50%;
+  padding-left: 20px;
+  gap: 20px;
+  background: #eee;
+  height: 100vh;
+}
+
+.main-book-content h1 {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  align-items: start;
+  gap: 10px;
+  color: royalblue;
+}
+
+.main-book-content p {
+  max-width: 400px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-book-content button {
+  width: 200px;
+  height: 50px;
+  background: royalblue;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-left: 200px;
+}
+
+.main-book-content h2 {
+  width: 400px;
+  text-align: right;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  color: royalblue;
+  justify-content: space-between;
+}
+
+.main-book-content h2 span {
+  font-weight: 300;
+  color: black;
+}
