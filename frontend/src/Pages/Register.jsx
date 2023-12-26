@@ -22,19 +22,15 @@ const Register = () => {
                       setShowSSO(false);
                     }}
                   ></i>
-                  <button>
+                  <button style={{ background: "green", color: "white" }}>
                     <i className="uil uil-google"></i>
                     <span>Continue With Google</span>
                   </button>
-                  <button>
+                  <button style={{ background: "royalblue", color: "white" }}>
                     <i className="uil uil-facebook"></i>
                     <span>Continue With Facebook</span>
                   </button>
-                  <button>
-                    <i className="uil uil-linkedin"></i>
-                    <span>Continue With Linked-In</span>
-                  </button>
-                  <button>
+                  <button style={{ background: "blueviolet", color: "white" }}>
                     <i className="uil uil-twitter"></i>
                     <span>Continue With Twitter</span>
                   </button>
@@ -55,38 +51,26 @@ const Register = () => {
                     <h1>Register</h1>
                     {step == 2 ? (
                       <div className="input-sect flex col">
-                        <label htmlFor="email">
-                          EMAIL
-                        </label>
-                        <input type="email"/>
+                        <label htmlFor="email">EMAIL</label>
+                        <input type="email" />
                       </div>
                     ) : null}
                     {step == 1 ? (
                       <div className="input-sect flex col">
-                        <label htmlFor="password">
-                          USERNAME
-                        </label>
-                        <input type="text"  />
+                        <label htmlFor="password">USERNAME</label>
+                        <input type="text" />
                       </div>
                     ) : null}
                     {step == 3 ? (
                       <div className="input-sect flex col">
-                        <label htmlFor="password">
-                          PHONE NUMBER
-                        </label>
-                        <input
-                          type="text"
-                        />
+                        <label htmlFor="password">PHONE NUMBER</label>
+                        <input type="text" />
                       </div>
                     ) : null}
                     {step == 4 ? (
                       <div className="input-sect flex col">
-                        <label htmlFor="password">
-                          PASSWORD
-                        </label>
-                        <input
-                          type="password"
-                        />
+                        <label htmlFor="password">PASSWORD</label>
+                        <input type="password" />
                       </div>
                     ) : null}
                     {step <= 4 ? (

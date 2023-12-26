@@ -1,263 +1,260 @@
-.home-page{
-    background: #eee;
+.home-page {
+  background: #eee;
 }
 
 .logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
-::-webkit-scrollbar{
-    max-width: 0;
+::-webkit-scrollbar {
+  max-width: 0;
 }
 
 .header {
-    height: 15vh;
-    justify-content: space-between;
-    padding: 0px 20px;
+  height: 15vh;
+  justify-content: space-between;
+  padding: 0px 20px;
 }
 
 .search-bar {
-    width: 500px;
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, .1);
-    justify-content: space-between;
-    overflow: hidden;
+  width: 500px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .search-bar input {
-    width: 440px;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    padding-left: 10px;
+  width: 440px;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  padding-left: 10px;
 }
 
 .search-bar i {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    background: #333;
-    color: white;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  background: #333;
+  color: white;
+  cursor: pointer;
 }
 
 .icon {
-    font-size: 2rem;
-    cursor: pointer;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .main-navs {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    background: rgba(0, 0, 0, .1);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .main-navs .main-menu {
-    padding: 50px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .main-menu h1 {
-    display: flex;
-    font-size: 3rem;
-    justify-content: space-between;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: .5px black;
-    position: relative;
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-between;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 0.5px black;
+  position: relative;
 }
 
 .main-menu h1::after {
-    content: attr(data-aos);
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-size: 15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0, 0, 0, .1);
-    -webkit-text-stroke: 0;
-    max-width: 0;
-    overflow: hidden;
-    z-index: -1;
-    font-weight: 900;
+  content: attr(data-aos);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.1);
+  -webkit-text-stroke: 0;
+  max-width: 0;
+  overflow: hidden;
+  z-index: -1;
+  font-weight: 900;
 }
 
 .main-menu h1:hover::after {
-    max-width: 100%;
+  max-width: 100%;
 }
-
 
 .close-btn {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: white;
-    top: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.5rem;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: white;
+  top: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-
 .book-sect {
-    width: 100%;
-    height: 85vh;
+  width: 100%;
+  height: 85vh;
 }
 
 .book-sect .hero {
-    width: 100%;
-    height: 85vh;
-    display: flex;
+  width: 100%;
+  height: 85vh;
+  display: flex;
 }
 
-
 .hero div h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-right: 60px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-right: 60px;
 }
 
 .hero div h1 span {
-    font-weight: 900;
-    color: royalblue;
-    border-bottom: 1px solid royalblue;
+  font-weight: 900;
+  color: royalblue;
+  border-bottom: 1px solid royalblue;
 }
 
-.main-books{
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 80px;
+.main-books {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 80px;
 }
 
-.main-book{
-    padding: 30px;
-    background: white;
-    border-radius: 20px;
-    gap: 10px;
-    cursor: pointer;
-    transition: .3s;
+.main-book {
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.main-book:hover{
-    transform: translateY(-20px);
+.main-book:hover {
+  transform: translateY(-20px);
 }
 
-.main-book img{
-    width: 260px;
-    height: 300px;
-    border-radius: 10px;
+.main-book img {
+  width: 260px;
+  height: 300px;
+  border-radius: 10px;
 }
 
-.main-book .bid{
-    width: 260px;
-    justify-content: space-between;
+.main-book .bid {
+  width: 260px;
+  justify-content: space-between;
 }
 
-.main-book h2{
-    font-weight: 300;
+.main-book h2 {
+  font-weight: 300;
 }
 
-.bid div{
-    width: 49%;
-    border-radius: 10px;
+.bid div {
+  width: 49%;
+  border-radius: 10px;
 }
 
-.bid div i{
-    font-size: 1.5rem;
-    color: green;
+.bid div i {
+  font-size: 1.5rem;
+  color: green;
 }
 
-.bid div:nth-child(2) i{
-    color: red;
+.bid div:nth-child(2) i {
+  color: red;
 }
 
-.bid div h2{
-    color: royalblue;
-    font-weight: 900;
+.bid div h2 {
+  color: royalblue;
+  font-weight: 900;
 }
 
-.main-book button{
-    width: 260px;
-    height: 50px;
-    border: none;
-    background: royalblue;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 900;
-    cursor: pointer;
+.main-book button {
+  width: 260px;
+  height: 50px;
+  border: none;
+  background: royalblue;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
 }
 
-.footer{
-    height: 50vh;
-    background: black;
-    margin-top: 20vh;
-    color: white;
+.footer {
+  height: 50vh;
+  background: black;
+  margin-top: 20vh;
+  color: white;
 }
 
-.footer h2{
-    font-weight: 300;
-    max-width: 60%;
-    font-size: 1.2rem;
-    text-align: center;
-    text-transform: uppercase;
+.footer h2 {
+  font-weight: 300;
+  max-width: 60%;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.footer h3{
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: gold;
+.footer h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: gold;
 }
 
-.footer .links{
-    width: 300px;
-    justify-content: space-around;
-    margin-top: 20px;
+.footer .links {
+  width: 300px;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.footer a i{
-    font-size: 2rem;
-    color: rgba(255, 255, 255, .5);
-    transition: .3s;
+.footer a i {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
 }
 
-.footer a:hover i{
-    color: white;
+.footer a:hover i {
+  color: white;
 }
 
-.bid-status{
-    width: 220px;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    color: black;
-    font-weight: 900;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+.bid-status {
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  color: black;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
