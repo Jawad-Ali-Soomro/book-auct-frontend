@@ -268,12 +268,13 @@
   width: 250px;
   height: 330px;
   border-radius: 20px;
+  position: relative;
 }
 .main-book-page .main-book-content {
   width: 50%;
   padding-left: 20px;
   gap: 20px;
-  background: #eee;
+  background: #eeeeee5b;
   height: 100vh;
 }
 
@@ -281,12 +282,11 @@
   width: 400px;
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
+  font-weight: 900;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 10px;
   align-items: start;
   gap: 10px;
-  color: royalblue;
 }
 
 .main-book-content p {
@@ -315,11 +315,79 @@
   text-align: right;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 20px;
-  color: royalblue;
   justify-content: space-between;
 }
 
 .main-book-content h2 span {
   font-weight: 300;
   color: black;
+}
+.bid-sect {
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.bid-sect .main-bid {
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.main-bid label {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: royalblue;
+}
+
+.main-bid input {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  outline: none;
+}
+
+.main-bid input:focus {
+  outline: 2px solid royalblue;
+}
+
+.main-bid button {
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  background: royalblue;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.main-bid .input-sect {
+  gap: 20px;
+}
+
+.bid-sect .main-bid section {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: royalblue;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.bid-sect .main-bid section:first-child {
+  background: red;
 }

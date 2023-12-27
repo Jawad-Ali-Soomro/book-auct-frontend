@@ -22,7 +22,7 @@ const Register = () => {
                       setShowSSO(false);
                     }}
                   ></i>
-                  <button style={{ background: "green", color: "white" }}>
+                  <button style={{ background: "#0fca82", color: "white" }}>
                     <i className="uil uil-google"></i>
                     <span>Continue With Google</span>
                   </button>
