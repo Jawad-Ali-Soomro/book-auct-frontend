@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import "../Styles/Login.css";
+import { signInWithPopup } from "firebase/auth";
+import { auth, githubProvider, googleProvider } from "../firebase";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const continueWithGoogle = async() => {
+    await signInWithPopup(auth,googleProvider).then((res) => {
+      toast.success(`Account Created Mr : ${res.user.displayName}`)
+    })
+  }
+  const continueWithGithub = async() => {
+    await signInWithPopup(auth,githubProvider).then((res) => {
+      toast.success(`Account Created Mr : ${res.user.displayName}`)
+    })
+  }
   const submitRegister = (e) => {
     e.preventDefault();
   };
@@ -22,13 +35,13 @@ const Register = () => {
                       setShowSSO(false);
                     }}
                   ></i>
-                  <button style={{ background: "#0fca82", color: "white" }}>
+                  <button style={{ background: "#0fca82", color: "white" }} onClick={continueWithGoogle}>
                     <i className="uil uil-google"></i>
                     <span>Continue With Google</span>
                   </button>
-                  <button style={{ background: "royalblue", color: "white" }}>
-                    <i className="uil uil-facebook"></i>
-                    <span>Continue With Facebook</span>
+                  <button style={{ background: "black", color: "white" }} onClick={continueWithGithub}>
+                    <i className="uil uil-github"></i>
+                    <span>Continue With Github</span>
                   </button>
                   <button style={{ background: "blueviolet", color: "white" }}>
                     <i className="uil uil-twitter"></i>

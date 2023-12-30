@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 import Bid from "../Components/Bid";
 
 const Book = () => {
-  const [bid, setBid] = useState(false);
+  const [bid, setBid] = useState(true);
   const [bookVal, setValue] = useState({});
-  console.log(typeof bookVal);
   const _id = useParams();
   useEffect(() => {
     const getData = async () => {
