@@ -325,7 +325,7 @@
 .bid-sect {
   width: 100%;
   height: 100vh;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   position: absolute;
   align-items: end;
   top: 0;
@@ -335,9 +335,9 @@
 
 .bid-sect .main-bid {
   width: 100%;
+  height: 100vh;
+  background: white;
   padding: 20px;
-  /* background: #eee; */
-  border-radius: 20px;
   gap: 20px;
 }
 
@@ -348,14 +348,17 @@
 }
 
 .main-bid .input-sect{
-  background: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-bid input {
-  width: 200px;
+  width: 400px;
   height: 50px;
   border: none;
-  padding-left: 20px;
+  background: transparent;
+  border-bottom: 1px solid;
   outline: none;
 }
 
@@ -371,13 +374,14 @@
   font-size: 1.1rem;
 }
 
-.input-sect i{
-  width: 50px;
+.input-sect button{
+  width: 200px;
   height: 50px;
   background: royalblue;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  margin-left: 200px;
 }
 
 .main-bid .input-sect {
@@ -390,7 +394,7 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-  background: royalblue;
+  background: #eee;
   color: white;
   font-weight: 900;
   font-size: 1.5rem;
@@ -405,5 +409,32 @@
 
 .bid-main{
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  gap: 10px;
+  overflow: scroll;
+}
+
+.bid-main .main-user{
+  background: white;
+  gap: 30px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.main-user img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.main-user h1{
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.main-user p{
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: royalblue;
 }
