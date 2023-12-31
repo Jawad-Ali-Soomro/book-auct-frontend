@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Bid from "../Components/Bid";
 
 const Book = () => {
-  const [bid, setBid] = useState(true);
+  const [bid, setBid] = useState(false);
   const [bookVal, setValue] = useState({});
   const _id = useParams();
   useEffect(() => {
