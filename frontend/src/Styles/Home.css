@@ -377,7 +377,7 @@
 .input-sect button{
   width: 200px;
   height: 50px;
-  background: royalblue;
+  background: #333;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
@@ -414,10 +414,13 @@
   overflow: scroll;
 }
 
+
 .bid-main .main-user{
+  width: 400px;
   background: white;
   gap: 30px;
   border-radius: 10px;
+  justify-content: space-between;
   padding: 10px 20px;
   cursor: pointer;
 }
@@ -431,10 +434,24 @@
 .main-user h1{
   font-weight: 300;
   font-size: 1.5rem;
+  color: #333;
 }
 
 .main-user p{
   font-size: 1.5rem;
   font-weight: 900;
-  color: royalblue;
+  color: #333;
+}
+
+.main-bid .close{
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  width: 50px;
+  height: 50px;
+  background: #333;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
 }

@@ -14,8 +14,9 @@ const Book = () => {
         .then((res) => setValue(res.data.findBook));
     };
     return () => {
+      setInterval(() => {
       getData();
-      console.log(bookVal);
+      }, 300);
     };
   }, []);
 
