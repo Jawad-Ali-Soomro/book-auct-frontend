@@ -17,13 +17,16 @@ const Header = () => {
       {showMenu == true ? (
         <>
           <div className="main-navs flex">
-            <i className="uil uil-multiply close-btn" onClick={() => setShowMenu(false)}></i>
+            <i
+              className="uil uil-multiply close-btn"
+              onClick={() => setShowMenu(false)}
+            ></i>
             <div className="main-menu">
-                <h1 data-aos="HOme">Home</h1>
-                <h1 data-aos="authors">Authors </h1>
-                <h1 data-aos="books">Books </h1>
-                <h1 data-aos="open">Open</h1>
-                <h1 data-aos="closed">Closed</h1>
+              <h1 data-aos="HOme">Home</h1>
+              <h1 data-aos="About">About </h1>
+              <h1 data-aos="books">Contact </h1>
+              <h1 data-aos="open">Profile</h1>
+              <h1 data-aos="closed">Books</h1>
             </div>
           </div>
         </>

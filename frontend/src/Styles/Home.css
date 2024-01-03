@@ -154,9 +154,23 @@
   padding: 30px;
   background: white;
   border-radius: 20px;
-  gap: 10px;
+  gap: 20px;
+  position: relative;
   cursor: pointer;
   transition: 0.3s;
+  padding-bottom: 50px;
+}
+
+.main-book .price {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #333;
+  top: -20px;
+  left: -20px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 900;
 }
 
 .main-book:hover {
@@ -175,7 +189,9 @@
 }
 
 .main-book h2 {
-  font-weight: 300;
+  font-weight: 900;
+  text-align: center;
+  color: #333;
 }
 
 .bid div {
@@ -198,15 +214,18 @@
 }
 
 .main-book button {
-  width: 260px;
+  width: 200px;
   height: 50px;
   border: none;
-  background: royalblue;
+  background: #333;
   border-radius: 10px;
   color: white;
   font-size: 1.2rem;
   font-weight: 900;
   cursor: pointer;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
 }
 
 .footer {
@@ -248,15 +267,15 @@
 
 .bid-status {
   width: 220px;
-  height: 50px;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  text-transform: uppercase;
   color: black;
   font-weight: 900;
   font-size: 1.2rem;
-  text-transform: uppercase;
 }
 
 .main-book-page .img-sect {
@@ -347,7 +366,7 @@
   color: royalblue;
 }
 
-.main-bid .input-sect{
+.main-bid .input-sect {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -374,7 +393,7 @@
   font-size: 1.1rem;
 }
 
-.input-sect button{
+.input-sect button {
   width: 200px;
   height: 50px;
   background: #333;
@@ -406,16 +425,14 @@
   background: red;
 }
 
-
-.bid-main{
+.bid-main {
   width: 100%;
   height: 100vh;
   gap: 10px;
   overflow: scroll;
 }
 
-
-.bid-main .main-user{
+.bid-main .main-user {
   width: 400px;
   background: white;
   gap: 30px;
@@ -425,25 +442,25 @@
   cursor: pointer;
 }
 
-.main-user img{
+.main-user img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.main-user h1{
+.main-user h1 {
   font-weight: 300;
   font-size: 1.5rem;
   color: #333;
 }
 
-.main-user p{
+.main-user p {
   font-size: 1.5rem;
   font-weight: 900;
   color: #333;
 }
 
-.main-bid .close{
+.main-bid .close {
   position: absolute;
   top: 5vh;
   right: 5vh;

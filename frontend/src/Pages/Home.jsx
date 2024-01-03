@@ -95,34 +95,8 @@ const Home = () => {
               onClick={() => navigate(`/book/${item._id}`)}
             >
               <img src={item.coverImage} alt="" />
-              <h2>{item.bookName}</h2>
-              <div className="bid flex">
-                <div className="flex col">
-                  <span className="flex">
-                    <i className="uil uil-arrow-up"></i>
-                    <p>Highest Bid</p>
-                  </span>
-                  <h2>
-                    {Bids.map((bid) => {
-                      if (bid.bidId === item._id) {
-                        return <p>{bid.highestBid} $</p>;
-                      }
-                    })}
-                  </h2>
-                </div>
-                <div className="flex col">
-                  <span className="flex">
-                    <i className="uil uil-arrow-down"></i>
-                    <p>Lowest Bid</p>
-                  </span>
-                  <h2>
-                    {Bids.map((bid) => {
-                      if (bid.bidId === item._id) {
-                        return <p>{bid.lowestBid} $</p>;
-                      }
-                    })}
-                  </h2>
-                </div>
+              <div className="price flex">
+                <p>$ {item.originalPrice}</p>
               </div>
               <p className="bid-status">
                 Bid Status{" "}

@@ -6,7 +6,23 @@ import Bid from "../Components/Bid";
 const Book = () => {
   const [bid, setBid] = useState(false);
   const [bookVal, setValue] = useState({});
+  const [btnValue, setbtnValue] = useState();
   const _id = useParams();
+  const getStatus = async () => {
+    try {
+      const response = await axios
+        .get("http://localhost:4000/api/v1/get/bids")
+        .then((res) =>
+          res.data.Bids.map((item) => {
+            if (item.bidId == _id.id) {
+              setbtnValue(item?.bidStatus);
+            }
+          })
+        );
+    } catch (error) {
+      console.error("Error fetching status:", error);
+    }
+  };
   useEffect(() => {
     const getData = async () => {
       axios
@@ -15,8 +31,9 @@ const Book = () => {
     };
     return () => {
       setInterval(() => {
-      getData();
+        getData();
       }, 300);
+      getStatus();
     };
   }, []);
 
@@ -37,7 +54,13 @@ const Book = () => {
             <span>Original Price</span>
             {bookVal.originalPrice} $
           </h2>
-          <button onClick={() => setBid(true)}>Bid</button>
+          {btnValue == true ? (
+            <button onClick={() => setBid(true)}>Bid</button>
+          ) : (
+            <button disabled style={{ background: "gray", cursor: "auto" }}>
+              Bid
+            </button>
+          )}
           <button style={{ background: "red" }}>Buy</button>
         </div>
       </div>
