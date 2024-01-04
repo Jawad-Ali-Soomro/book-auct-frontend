@@ -3,8 +3,32 @@ import "../Styles/Login.css";
 import { signInWithPopup } from "firebase/auth";
 import { auth, githubProvider, googleProvider } from "../firebase";
 import toast from "react-hot-toast";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [Data, setData] = useState();
+  const RegisterUser = () => {
+    const createdAccount = axios
+      .post("http://localhost:4000/api/v1/create/user", {
+        username,
+        phone,
+        email,
+        password,
+      })
+      .then((res) => {
+        res.data.message == "Account Created"
+          ? localStorage.setItem("user_info", JSON.stringify(res.data.user)) +
+            navigate("/")
+          : toast.error(res.data.message);
+      });
+  };
+  console.log(localStorage.getItem("user_info"));
   const continueWithGoogle = async () => {
     await signInWithPopup(auth, googleProvider).then((res) => {
       toast.success(`Account Created Mr : ${res.user.displayName}`);
@@ -71,35 +95,59 @@ const Register = () => {
                     {step == 2 ? (
                       <div className="input-sect flex col">
                         <label htmlFor="email">EMAIL</label>
-                        <input type="email" />
+                        <input
+                          type="email"
+                          value={email}
+                          name="email"
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
                       </div>
                     ) : null}
                     {step == 1 ? (
                       <div className="input-sect flex col">
                         <label htmlFor="password">USERNAME</label>
-                        <input type="text" />
+                        <input
+                          type="text"
+                          value={username}
+                          name="username"
+                          onChange={(e) => setUsername(e.target.value)}
+                        />
                       </div>
                     ) : null}
                     {step == 3 ? (
                       <div className="input-sect flex col">
-                        <label htmlFor="password">PHONE NUMBER</label>
-                        <input type="text" />
+                        <label htmlFor="phone">PHONE NUMBER</label>
+                        <input
+                          type="text"
+                          value={phone}
+                          name="phone"
+                          onChange={(e) => setPhone(e.target.value)}
+                        />
                       </div>
                     ) : null}
                     {step == 4 ? (
                       <div className="input-sect flex col">
                         <label htmlFor="password">PASSWORD</label>
-                        <input type="password" />
+                        <input
+                          type="password"
+                          value={password}
+                          name="password"
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
                       </div>
                     ) : null}
-                    {step <= 4 ? (
+                    {step <= 3 ? (
                       <button
                         className="btn-next"
                         onClick={() => setstep(step + 1)}
                       >
-                        {step <= 3 ? "Next" : "Register"}
+                        Next
                       </button>
-                    ) : null}
+                    ) : (
+                      <button className="btn-next" onClick={RegisterUser}>
+                        Register
+                      </button>
+                    )}
                     <button
                       className="show-more"
                       onClick={() => {

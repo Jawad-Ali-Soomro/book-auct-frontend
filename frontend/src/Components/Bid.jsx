@@ -6,6 +6,8 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Bid = () => {
+  const data = localStorage.getItem("user_info");
+  const originalData = JSON.parse(data);
   const _id = useParams();
   let [bidVal, setBidVal] = useState();
   const [bidSuceess, setBidSuccess] = useState(false);
@@ -22,13 +24,12 @@ const Bid = () => {
       }, 300);
     };
   }, []);
-
   const placeBid = async () => {
     axios
       .post("http://localhost:4000/api/v1/place/bid", {
         price: bidVal,
         bookId: _id.id,
-        id: "65928a8fa8360c70e95bf50c",
+        id: originalData._id,
       })
       .then((res) => console.log(res.data))
       .then(setBidSuccess(true));
