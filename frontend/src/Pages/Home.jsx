@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { DNA } from "react-loader-spinner";
 const Home = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -87,33 +88,46 @@ const Home = () => {
         </div>
       </div>
       <div className="main-books flex">
-        {data.map((item) => {
-          return (
-            <div
-              className="main-book flex col"
-              key={item.id}
-              onClick={() => navigate(`/book/${item._id}`)}
-            >
-              <img src={item.coverImage} alt="" />
-              <div className="price flex">
-                <p>$ {item.originalPrice}</p>
-              </div>
-              <p className="bid-status">
-                Bid Status{" "}
-                {Bids.map((bid) => {
-                  if (bid.bidId === item._id) {
-                    if (bid.bidStatus == true) {
-                      return <span style={{ color: "green" }}>OPEN</span>;
-                    } else {
-                      return <span style={{ color: "red" }}>CLOSED</span>;
+        {data !== undefined ? (
+          data.map((item) => {
+            return (
+              <div
+                className="main-book flex col"
+                key={item.id}
+                onClick={() => navigate(`/book/${item._id}`)}
+              >
+                <img src={item.coverImage} alt="" />
+                <div className="price flex">
+                  <p>$ {item.originalPrice}</p>
+                </div>
+                <p className="bid-status">
+                  Bid Status{" "}
+                  {Bids.map((bid) => {
+                    if (bid.bidId === item._id) {
+                      if (bid.bidStatus == true) {
+                        return <span style={{ color: "green" }}>OPEN</span>;
+                      } else {
+                        return <span style={{ color: "red" }}>CLOSED</span>;
+                      }
                     }
-                  }
-                })}
-              </p>
-              <button>Start Bid</button>
-            </div>
-          );
-        })}
+                  })}
+                </p>
+                <button>Start Bid</button>
+              </div>
+            );
+          })
+        ) : (
+          <h1>
+            <DNA
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper"
+            />
+          </h1>
+        )}
       </div>
       <div className="footer flex col" style={{ gap: "10px" }}>
         <h3>BOOK-AUCT</h3>

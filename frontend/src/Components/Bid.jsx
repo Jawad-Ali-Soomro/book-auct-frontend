@@ -25,7 +25,7 @@ const Bid = () => {
     };
   }, []);
   const placeBid = async () => {
-    axios
+    await axios
       .post("http://localhost:4000/api/v1/place/bid", {
         price: bidVal,
         bookId: _id.id,
